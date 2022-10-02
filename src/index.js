@@ -15,7 +15,7 @@ function main() {
     analyse();
 
     // watch for changes in php files
-    // startWwatching();
+    startWwatching();
 }
 
 function init() {
@@ -56,7 +56,13 @@ function analyse() {
 function showResults(results) {
     isBusy = false;
     results = JSON.parse(results);
-    showFileResults(results.files);
+
+    console.clear();
+    if (!results.totals.errors && !results.totals.file_errors) {
+        showOk();
+    } else {
+        showFileResults(results.files);
+    }
 }
 
 function showFileResults(results) {
@@ -67,14 +73,33 @@ function showFileResults(results) {
             const errors = obj['errors'];
             const messages = obj['messages'];
 
-            showHeader(displayFile);
+            showHeader(displayFile, errors);
             showFileDetailResults(messages);
         }
     }
 }
 
-function showHeader(displayFile) {
-    let str = ' ' + 'Line   ' + displayFile;
+function showOk() {
+    var str = new Array(getOutputWidth() + 1).join(' ');
+    var str2 = '  Well done. No errors !';
+    for (i = 0; i <= (getOutputWidth() - 25); i++) {
+        str2 = str2 + ' ';
+    }
+
+    console.log(clc.black.bgGreen(str));
+    console.log(clc.black.bgGreen(str2));
+    console.log(clc.black.bgGreen(str));
+}
+
+function showHeader(displayFile, errors) {
+    errors = errors.toString();
+    const padWidth = Math.max(0, 5 - errors.length);
+    errors = errors + ')';
+    for (i = 0; i <= padWidth; i++) {
+        errors = errors + ' ';
+    }
+
+    let str = ' (#' + errors + displayFile;
     const width = getOutputWidth() - str.length;
     for (i = 0; i < width; i++) {
         str = str + ' ';

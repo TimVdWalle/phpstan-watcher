@@ -54,14 +54,17 @@ function analyse() {
 }
 
 function showResults(results) {
+    console.log(results);
     isBusy = false;
+    if(!results) return;
     results = JSON.parse(results);
 
     console.clear();
-    if (!results.totals.errors && !results.totals.file_errors) {
-        showOk();
-    } else {
+    // if (!results.totals.errors && !results.totals.file_errors) {
+    if (!results || results.totals.file_errors) {
         showFileResults(results.files);
+    } else {
+        showOk();
     }
 }
 
@@ -88,7 +91,7 @@ function showOk() {
 
     console.log(clc.black.bgGreen(str));
     console.log(clc.black.bgGreen(str2));
-    console.log(clc.black.bgGreen(str));
+    process.stdout.write(clc.black.bgGreen(str) + "\r");
 }
 
 function showHeader(displayFile, errors) {

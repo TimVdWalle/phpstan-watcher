@@ -1,6 +1,6 @@
 {
   "name": "phpstan-watcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -16,6 +16,7 @@
     "cli-color": "^2.0.3",
     "cli-format": "^3.0.9",
     "node-watch": "^0.7.3",
+    "npm-packlist": "^7.0.0-pre.1",
     "npm-watch": "^0.11.0"
   }
 }

@@ -1,1 +1,20 @@
 https://snyk.io/blog/best-practices-create-modern-npm-package/
+
+
+HOW TO PUBLISH YOUR NPM PACKAGE
+
+Once you have an npm project and an npm account, you’re ready to publish your npm package to the public and official npmjs registry to make it available for others to consume. Here are the steps for you to follow to check what will be published before executing that and then running the actual publish process:
+
+In your terminal, run npx npm-packlist to see the contents that will be included in the published version of the package.
+
+This ensures you are not missing any source code files that are needed for your package to function properly. It’s also a good practice to make sure you aren’t accidentally leaking sensitive information to the public such as a local configuration file with database credentials or API keys.
+> npx npm-packlist
+
+In your terminal, run npm publish --dry-run to see what would be done when actually running the command.
+> npm publish --dry-run
+
+In your terminal, run npm publish --access=public to actually publish the package to npm. Note: --access=public is needed for scoped packages (@clarkio/modern-npm-package) as they’re private by default. If it’s not scoped and doesn’t have the private field set to true in your package.json, it will be public as well.
+> npm publish --access=public
+
+
+You’re done! You’ve completed building and deploying your own npm package. Next up, you’ll learn how to make a more robust package that is ready for production environments and to be used more widely.

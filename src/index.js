@@ -54,7 +54,7 @@ function analyse() {
 }
 
 function showResults(results) {
-    console.log(results);
+    // console.log(results);
     isBusy = false;
     if(!results) return;
     results = JSON.parse(results);

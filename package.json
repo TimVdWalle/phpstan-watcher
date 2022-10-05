@@ -1,7 +1,7 @@
 {
   "name": "phpstan-watcher",
   "version": "1.0.1",
-  "description": "",
+  "description": "Watches for changes in php files ans launches phpstan/larastan automatically",
   "main": "index.js",
   "bin": {
     "phpstan-watcher": "src/index.js"

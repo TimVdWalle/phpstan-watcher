@@ -98,9 +98,16 @@ function showOk() {
 function showErrorsNotification(errors){
     const notifier = require('node-notifier');
 
+    let msgCount = ' some ';
+    let msgPart = 'errors';
+    if(errors <= 1){
+        msgCount = ' an '
+        msgPart = 'error';
+    }
+
     notifier.notify({
-        title: errors + ' errors',
-        message: 'Phpstan found some errors that you should fix.!',
+        title: errors + ' ' + msgPart,
+        message: 'Phpstan found' + msgCount + msgPart + ' that you should fix.!',
         timeout: 5
     });
 }

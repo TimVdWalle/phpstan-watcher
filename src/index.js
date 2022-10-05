@@ -63,6 +63,7 @@ function showResults(results) {
     // if (!results.totals.errors && !results.totals.file_errors) {
     if (!results || results.totals.file_errors) {
         showFileResults(results.files);
+        showErrorsNotification(results.totals.file_errors);
     } else {
         showOk();
     }
@@ -92,6 +93,16 @@ function showOk() {
     console.log(clc.black.bgGreen(str));
     console.log(clc.black.bgGreen(str2));
     process.stdout.write(clc.black.bgGreen(str) + "\r");
+}
+
+function showErrorsNotification(errors){
+    const notifier = require('node-notifier');
+
+    notifier.notify({
+        title: errors + ' errors',
+        message: 'Phpstan found some errors that you should fix.!',
+        timeout: 5
+    });
 }
 
 function showHeader(displayFile, errors) {

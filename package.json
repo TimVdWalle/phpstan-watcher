@@ -1,6 +1,6 @@
 {
   "name": "phpstan-watcher",
-  "version": "1.0.1",
+  "version": "1.1.4",
   "description": "Watches for changes in php files ans launches phpstan/larastan automatically",
   "main": "index.js",
   "bin": {
@@ -15,8 +15,8 @@
   "dependencies": {
     "cli-color": "^2.0.3",
     "cli-format": "^3.0.9",
+    "node-notifier": "^10.0.1",
     "node-watch": "^0.7.3",
-    "npm-packlist": "^7.0.0-pre.1",
     "npm-watch": "^0.11.0"
   }
 }

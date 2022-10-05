@@ -10,7 +10,7 @@
 **1**: First, you may use npm to install phpstan-watcher
 
 ```bash
-npm install tim_vdwalle/phpstan-watcher
+npm i phpstan-watcher
 ```
 
 
@@ -32,3 +32,9 @@ npm install tim_vdwalle/phpstan-watcher
 ## 📖 License
 
 Phpstan-watcher is an open-sourced software licensed under the ISC License.
+
+
+
+## 📖 Notification
+
+For the notifications to work : on mac you should allow terminal notifications

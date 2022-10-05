@@ -3,7 +3,8 @@ https://snyk.io/blog/best-practices-create-modern-npm-package/
 
 HOW TO PUBLISH YOUR NPM PACKAGE
 
-Once you have an npm project and an npm account, you’re ready to publish your npm package to the public and official npmjs registry to make it available for others to consume. Here are the steps for you to follow to check what will be published before executing that and then running the actual publish process:
+Once you have an npm project and an npm account, you’re ready to publish your npm package to the public and official npmjs registry to make it available for others to consume.
+Here are the steps for you to follow to check what will be published before executing that and then running the actual publish process:
 
 In your terminal, run npx npm-packlist to see the contents that will be included in the published version of the package.
 

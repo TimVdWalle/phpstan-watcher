@@ -107,7 +107,7 @@ function showErrorsNotification(errors){
 
     notifier.notify({
         title: errors + ' ' + msgPart,
-        message: 'Phpstan found' + msgCount + msgPart + ' that you should fix.!',
+        message: 'Phpstan found' + msgCount + msgPart + ' that you should fix!',
         timeout: 5
     });
 }

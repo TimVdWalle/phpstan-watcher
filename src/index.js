@@ -21,8 +21,10 @@ function main() {
 function init() {
     const {cwd} = require('node:process');
     pwd = cwd();
+    let version = getVersion();
 
-    console.log('Start watching ' + clc.magenta(pwd + '...'));
+    console.log(clc.white.bgMagenta('Start watching ' + pwd + '...'));
+    console.log(clc.white.bgMagenta('Version ' + version));
     console.log('');
 }
 
@@ -171,6 +173,11 @@ function printWrappedLine(str1, str2) {
 
 function getOutputWidth() {
     return process.stdout.columns;
+}
+
+function getVersion(){
+    var pjson = require('../package.json');
+    return pjson.version;
 }
 
 if (require.main === module) {

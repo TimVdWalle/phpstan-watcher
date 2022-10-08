@@ -6,6 +6,8 @@ let pwd = null;
 var clc = require("cli-color");
 const {exec} = require("child_process");
 const watch = require("node-watch");
+const fs = require("fs");
+const path = require("path");
 
 function main() {
     // initialize + welcome message
@@ -110,7 +112,9 @@ function showErrorsNotification(errors){
     notifier.notify({
         title: errors + ' ' + msgPart,
         message: 'Phpstan found' + msgCount + msgPart + ' that you should fix!',
-        timeout: 5
+        icon: path.join(__dirname, 'logo.png'),
+        // contentImage: path.join(__dirname, 'logo.png'),
+        timeout: 200
     });
 }
 

@@ -89,7 +89,7 @@ function showFileResults(results) {
 
 function showOk() {
     var str = new Array(getOutputWidth() + 1).join(' ');
-    var str2 = '  Well done. No errors !';
+    var str2 = '  Well done. No errors!';
     for (i = 0; i <= (getOutputWidth() - 25); i++) {
         str2 = str2 + ' ';
     }

@@ -1,6 +1,6 @@
 {
   "name": "phpstan-watcher",
-  "version": "1.2.2",
+  "version": "1.3.1",
   "description": "Watches for changes in php files ans launches phpstan/larastan automatically",
   "keywords": [
     "phpstan",
@@ -10,12 +10,10 @@
     "laravel",
     "static code analysis"
   ],
-
   "repository": {
     "type": "git",
     "url": "https://github.com/TimVdWalle/phpstan-watcher.git"
   },
-
   "main": "index.js",
   "bin": {
     "phpstan-watcher": "src/index.js"
@@ -25,7 +23,7 @@
     "watch": "npm-watch"
   },
   "author": "Tim Vande Walle",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cli-color": "^2.0.3",
     "cli-format": "^3.0.9",

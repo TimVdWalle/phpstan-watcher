@@ -10,6 +10,12 @@
     "laravel",
     "static code analysis"
   ],
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TimVdWalle/phpstan-watcher.git"
+  },
+
   "main": "index.js",
   "bin": {
     "phpstan-watcher": "src/index.js"

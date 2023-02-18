@@ -19,3 +19,12 @@ In your terminal, run npm publish --access=public to actually publish the packag
 
 
 You’re done! You’ve completed building and deploying your own npm package. Next up, you’ll learn how to make a more robust package that is ready for production environments and to be used more widely.
+
+
+
+
+
+
+
+add license:
+https://www.npmjs.com/package/license

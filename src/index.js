@@ -4,13 +4,8 @@ let isBusy = false;
 let pwd = null;
 
 var clc = require("cli-color");
-//const {exec} = require("child_process");
-//const watch = require("node-watch");
-//const fs = require("fs");
 const path = require("path");
 const spawn = require('child_process').spawn;
-
-//const composer = spawn('composer', ['analyse-json']);
 
 function main() {
     // initialize + welcome message
@@ -49,25 +44,14 @@ function startWwatching() {
 function analyse() {
     isBusy = true;
     const composer = spawn('composer', ['analyse-json']);
-    //const {exec} = require("child_process");
-    //let result = null;
 
     composer.stdout.on('data', (data) => {
         showResults(data);
-        //isBusy = false;
-      });
-      
-
-    /*
-    exec('composer analyse-json', (err, output) => {
-        // once the command has completed, the callback function is called
-        if (err) {
-            // console.error("could not execute command: ", err)
-        }
-
-        showResults(output);
     });
-    */
+
+    composer.stderr.on('data', (err) => {
+        console.error("could not execute command: ", err)
+    });
 }
 
 function showResults(results) {

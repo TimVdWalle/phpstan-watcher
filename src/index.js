@@ -48,10 +48,6 @@ function analyse() {
     composer.stdout.on('data', (data) => {
         showResults(data);
     });
-
-    composer.stderr.on('data', (err) => {
-        console.error("could not execute command: ", err)
-    });
 }
 
 function showResults(results) {
@@ -130,7 +126,7 @@ function showHeader(displayFile, errors) {
     }
 
     let str = ' (#' + errors + displayFile;
-    const width = getOutputWidth() - str.length;
+    const width = getOutputWidth() - str.length ;
     for (i = 0; i < width; i++) {
         str = str + ' ';
     }
@@ -142,8 +138,8 @@ function showHeader(displayFile, errors) {
 }
 
 function printHeaderLine() {
-    let str = ' ------ ';
-    let width = getOutputWidth() - 9;
+    let str = ' ------   ';
+    let width = getOutputWidth() - 11;
     for (i = 0; i < width; i++) {
         str = str + '-';
     }
@@ -169,7 +165,7 @@ function printWrappedLine(str1, str2) {
     var col1 = ' ' + str1.toString();
     var col2 = {
         content: str2,
-        width: getOutputWidth() - 9,
+        width: getOutputWidth() - 11,
     };
 
     var config = {width: getOutputWidth(), paddingMiddle: ' '};

@@ -24,9 +24,10 @@ function init() {
     const {cwd} = require('node:process');
     pwd = cwd();
     let version = getVersion();
-
-    console.log(clc.white.bgMagenta('Start watching ' + pwd + '...'));
-    console.log(clc.white.bgMagenta('Version ' + version));
+ 
+    console.log(clc.white.bgMagenta(padEndOfLine('Start watching : ')));
+    console.log(clc.white.bgMagenta(padEndOfLine(pwd)));
+    console.log(clc.white.bgMagenta(padEndOfLine('Version ' + version + ' ')));
     console.log('');
 }
 
@@ -184,6 +185,20 @@ function getVersion(){
     var pjson = require('../package.json');
     return pjson.version;
 }
+    
+// Function to pad the message to the end of the line
+const padEndOfLine = (message) => {
+    const paddingLength = getTerminalWidth() - message.length;
+    const padding = ' '.repeat(paddingLength);
+    return message + padding;
+};
+
+// Get the terminal width
+const getTerminalWidth = () => {
+    const terminalWidth = process.stdout.columns;
+    return terminalWidth;
+};
+
 
 if (require.main === module) {
     main();

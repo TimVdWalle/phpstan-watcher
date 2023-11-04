@@ -90,13 +90,14 @@ function showFileResults(results) {
 function showOk() {
     var str = new Array(getOutputWidth() + 1).join(' ');
     var str2 = '  Well done. No errors!';
-    for (i = 0; i <= (getOutputWidth() - 25); i++) {
+    for (i = 0; i <= (getOutputWidth() - 24); i++) {
         str2 = str2 + ' ';
     }
 
     console.log(clc.black.bgGreen(str));
     console.log(clc.black.bgGreen(str2));
-    process.stdout.write(clc.black.bgGreen(str) + "\r");
+    process.stdout.write(clc.black.bgGreen(str) + "\r\r");
+    process.stdout.write(clc.black.bgGreen(str) + "\r\n");
 }
 
 function showErrorsNotification(errors){

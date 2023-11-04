@@ -71,17 +71,22 @@ function showResults(results) {
 }
 
 function showFileResults(results) {
+    var totalErrors = 0;
+
     for (var file in results) {
         if (results.hasOwnProperty(file)) {
             const displayFile = file.replace(pwd, "");
             const obj = results[file];
             const errors = obj['errors'];
             const messages = obj['messages'];
+            totalErrors += errors;
 
             showHeader(displayFile, errors);
             showFileDetailResults(messages);
         }
     }
+
+    showHeader('Total', totalErrors);
 }
 
 function showOk() {

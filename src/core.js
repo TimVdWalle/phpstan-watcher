@@ -38,11 +38,18 @@ function analyse() {
 
 function showResults(results) {
     isBusy = false;
-    if(!results) return;
+    if (!results) return; // Return early if results are empty
+
     results = JSON.parse(results);
 
+    // Check if the results object has the necessary properties
+    if (!results.totals || !results.files) {
+        console.log('No errors found'); // Display a message indicating no errors
+        return;
+    }
+
     console.clear();
-    if (!results || results.totals.file_errors) {
+    if (results.totals.file_errors) {
         showFileResults(results.files);
         showErrorsNotification(results.totals.file_errors);
     } else {
